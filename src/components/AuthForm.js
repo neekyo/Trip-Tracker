@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text, Button, Input } from 'react-native-elements';
+import Spacer from './Spacer';
 
 const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
 	const [ email, setEmail ] = useState('');
@@ -9,7 +10,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
 	return (
 		<React.Fragment>
 			<Spacer>
-				<Text h3>Sign Up for Tracker</Text>
+				<Text h3>{headerText}</Text>
 			</Spacer>
 			<Input label="Email" value={email} onChangeText={setEmail} autoCapitalize="none" autoCorrect={false} />
 			<Spacer />
@@ -21,14 +22,21 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText }) => {
 				autoCapitalize="none"
 				autoCorrect={false}
 			/>
-			{state.errorMessage ? <Text style={styles.errorMessage}>{state.errorMessage}</Text> : null}
+			{errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
 			<Spacer>
-				<Button title="Sign up" onPress={() => signup({ email, password })} />
+				<Button title={submitButtonText} onPress={() => onSubmit({ email, password })} />
 			</Spacer>
 		</React.Fragment>
 	);
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	errorMessage: {
+		fontSize: 16,
+		color: 'red',
+		marginLeft: 15,
+		marginTop: 15
+	}
+});
 
 export default AuthForm;
