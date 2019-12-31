@@ -38,7 +38,7 @@ const signup = (dispatch) => async ({ email, password }) => {
 		await AsyncStorage.setItem('token', response.data.token);
 		dispatch({ type: 'signin', payload: response.data.token });
 		navigate('TrackList');
-	} catch (err) {
+	} catch (e) {
 		dispatch({ type: 'add_error', payload: 'Something went wrong with sign up' });
 	}
 };
@@ -49,7 +49,7 @@ const signin = (dispatch) => async ({ email, password }) => {
 		await AsyncStorage.setItem('token', response.data.token);
 		dispatch({ type: 'signin', payload: response.data.token });
 		navigate('TrackList');
-	} catch (err) {
+	} catch (e) {
 		dispatch({
 			type: 'add_error',
 			payload: 'Something went wrong with sign in'
