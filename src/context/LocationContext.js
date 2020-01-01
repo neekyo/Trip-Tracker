@@ -12,7 +12,7 @@ const locationReducer = (state, action) => {
 const startRecording = (dispatch) => () => {};
 const stopRecording = (dispatch) => () => {};
 const addLocation = (dispatch) => (location) => {
-	dispatch({ tpye: 'add_current_location', payload: location });
+	dispatch({ type: 'add_current_location', payload: location });
 };
 
 export const { Context, Provider } = createDataContext(
