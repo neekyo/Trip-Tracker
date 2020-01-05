@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
 import { Context as TrackContext } from '../context/TrackContext';
@@ -28,7 +28,5 @@ const TrackListScreen = ({ navigation }) => {
 TrackListScreen.navigationOptions = {
 	title: 'My Tracks'
 };
-
-const styles = StyleSheet.create({});
 
 export default TrackListScreen;
