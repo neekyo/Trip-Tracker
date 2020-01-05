@@ -12,7 +12,7 @@ const TrackDetailScreen = ({ navigation }) => {
 
 	return (
 		<React.Fragment>
-			<Text style={{ fontSize: 48 }}>{track.name}</Text>
+			<Text style={styles.header}>{track.name}</Text>
 			<MapView
 				initialRegion={{
 					longitudeDelta: 0.01,
@@ -30,6 +30,12 @@ const TrackDetailScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 	map: {
 		height: 300
+	},
+	header: {
+		fontSize: 26,
+		alignSelf: 'center',
+		marginBottom: 5,
+		marginTop: 5
 	}
 });
 

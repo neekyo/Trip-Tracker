@@ -26,7 +26,7 @@ const TrackListScreen = ({ navigation }) => {
 };
 
 TrackListScreen.navigationOptions = {
-	title: 'Tracks'
+	title: 'My Tracks'
 };
 
 const styles = StyleSheet.create({});
