@@ -2,6 +2,11 @@ import * as Location from 'expo-location';
 
 const tenMetersWithDegrees = 0.0001;
 
+const calcSpiral = (increment, pointsPerRevolution, scalar, trigFunc) => {
+	const theta = increment * 2 * Math.PI / pointsPerRevolution;
+	return scalar * theta * trigFunc(theta);
+};
+
 const getLocation = (increment) => {
 	return {
 		timestamp: 10000000,
@@ -10,9 +15,9 @@ const getLocation = (increment) => {
 			heading: 0,
 			accuracy: 5,
 			altitudeAccuracy: 5,
-			altitude: 5,
-			longitude: -122.0312186 + increment * tenMetersWithDegrees,
-			latitude: 37.33233141 + increment * tenMetersWithDegrees
+			altidude: 5,
+			latitude: 26.862239 + calcSpiral(increment, 8, 1, Math.cos) * tenMetersWithDegrees,
+			longitude: -80.114429 + calcSpiral(increment, 8, 1, Math.sin) * tenMetersWithDegrees
 		}
 	};
 };
