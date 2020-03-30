@@ -16,8 +16,8 @@ const getLocation = (increment) => {
 			accuracy: 5,
 			altitudeAccuracy: 5,
 			altidude: 5,
-			latitude: 26.862239 + calcSpiral(increment, 8, 1, Math.cos) * tenMetersWithDegrees,
-			longitude: -80.114429 + calcSpiral(increment, 8, 1, Math.sin) * tenMetersWithDegrees
+			latitude: 37.33182 + calcSpiral(increment, 8, 1, Math.cos) * tenMetersWithDegrees,
+			longitude: -122.03118 + calcSpiral(increment, 8, 1, Math.sin) * tenMetersWithDegrees
 		}
 	};
 };
