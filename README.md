@@ -2,6 +2,14 @@
 
 Track your trips & destinations on your phone with this React Native app
 
+<div align="center">
+<img height="100px" width="150px" src="https://codersera.com/blog/wp-content/uploads/2019/07/unnamed.png">
+<img height="100px" width="150px" src="https://miro.medium.com/max/600/1*UniTjL05TA-vkvMXJFRdFg.png">
+<img height="100px" width="150px" src="https://codr1.files.wordpress.com/2018/02/ngrok.png?w=500">
+</div>
+
+
+
 ### Pre-requisites 
 
 [Expo](https://expo.io/)
@@ -25,6 +33,13 @@ $ npm install
 
 #### Mongo
 - Set up a MongoDB Cluster & Collection and link it to the Trip-Tracker app in order to save User tracks
+- Creat a 'config/keys.js' file in the track server app and add your mongo URI
+
+```
+module.exports = {
+	mongoURI: 'redacted'
+};
+```
 
 #### Ngrok
 - Follow [ngrok instructions](https://ngrok.com/download) and start up an HTTP tunnel set to port 3004 (not 80)
