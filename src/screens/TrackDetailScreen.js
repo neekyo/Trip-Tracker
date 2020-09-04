@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { Context as TrackContext } from '../context/TrackContext';
 import MapView, { Polyline } from 'react-native-maps';
 
@@ -12,7 +12,7 @@ const TrackDetailScreen = ({ navigation }) => {
 
 	return (
 		<React.Fragment>
-			<Text style={styles.header}>{track.name}</Text>
+			<Text style={{ fontSize: 48 }}>{track.name}</Text>
 			<MapView
 				initialRegion={{
 					longitudeDelta: 0.01,
@@ -30,12 +30,6 @@ const TrackDetailScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 	map: {
 		height: 300
-	},
-	header: {
-		fontSize: 26,
-		alignSelf: 'center',
-		marginBottom: 5,
-		marginTop: 5
 	}
 });
 
